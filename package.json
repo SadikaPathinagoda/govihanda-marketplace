@@ -1,0 +1,17 @@
+{
+  "name": "govihanda-marketplace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "mongo:up": "docker compose -f docker-compose.mongo.yml up -d",
+    "mongo:down": "docker compose -f docker-compose.mongo.yml down",
+    "mongo:logs": "docker compose -f docker-compose.mongo.yml logs -f mongodb"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
